@@ -1,0 +1,15 @@
+server:
+  port: 9000
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: cliente
+        uri: http://localhost:8090
+        predicates:
+        - Path=/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
